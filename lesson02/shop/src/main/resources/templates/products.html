@@ -20,18 +20,11 @@
     <table class="table table-hover">
         <thead class="head-dark">
         <tr>
-<!--            <td>ID</td>-->
             <td>Title</td>
             <td>Price</td>
         </tr>
         </thead>
         <tbody>
-<!--        <tr>-->
-<!--            <td th:text="${product.id}"/>-->
-<!--            <td th:text="${product.title}"/>-->
-<!--            <td th:text="${product.price}"/>-->
-<!--        </tr>-->
-
 
 <tr th:each="product : ${products}">
     <td th:text="${product.title}">Cheese</td>
@@ -42,18 +35,6 @@
         </tbody>
     </table>
 
-<!--    <table border="1" align="center">-->
-<!--        <tr>-->
-<!--            <td>Title</td>-->
-<!--            <td>Price</td>-->
-<!--            <td></td>-->
-<!--        </tr>-->
-<!--        <tr th:each="product : ${products}">-->
-<!--            <td th:text="${product.title}">Cheese</td>-->
-<!--            <td th:text="${product.price}">12.0</td>-->
-<!--            <td><a th:href="@{/products/{id}/bucket(id=${product.id})}">Add to bucket</a></td>-->
-<!--        </tr>-->
-<!--    </table>-->
 </div>
 </body>
 </html>

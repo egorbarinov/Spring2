@@ -21,10 +21,6 @@
                     <a class="nav-link" th:href="@{/users}">All users</a>
                 </li>
 
-<!--                <li class="nav-item" th:classappend="${activeTab == 'Users' ? 'active' : ''}">-->
-<!--                    <a class="nav-link" sec:authorize="hasAnyAuthority('ADMIN','MANAGER')" th:href="@{/users}">Users</a>-->
-<!--                </li>-->
-
                 <li class="nav-item" th:classappend="${activeTab == 'Bucket' ? 'active' : ''}">
                     <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/bucket}">Bucket</a>
                 </li>
