@@ -1,9 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /app
+
+
 spring:
+  mvc:
+    static-path-pattern: /statico/**
   jpa:
     hibernate:
       ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      temp:
+        use_jdbc_metadata_defaults: false
+      id:
+        new_generator_mappings: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/gb_shop
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
   flyway:
