@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Application</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container" >
+    <div th:replace="~{navigation :: navigation(Home)}" />
+    <h1>Product</h1>
+    <table class="table table-hover">
+        <thead class="head-dark">
+        <tr>
+<!--            <td>ID</td>-->
+            <td>Title</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr>-->
+<!--            <td th:text="${product.id}"/>-->
+<!--            <td th:text="${product.title}"/>-->
+<!--            <td th:text="${product.price}"/>-->
+<!--        </tr>-->
+
+
+<tr th:each="product : ${products}">
+    <td th:text="${product.title}">Cheese</td>
+    <td th:text="${product.price}">12.0</td>
+    <td><a th:href="@{/products/{id}/bucket(id=${product.id})}">Add to bucket</a></td>
+</tr>
+
+        </tbody>
+    </table>
+
+<!--    <table border="1" align="center">-->
+<!--        <tr>-->
+<!--            <td>Title</td>-->
+<!--            <td>Price</td>-->
+<!--            <td></td>-->
+<!--        </tr>-->
+<!--        <tr th:each="product : ${products}">-->
+<!--            <td th:text="${product.title}">Cheese</td>-->
+<!--            <td th:text="${product.price}">12.0</td>-->
+<!--            <td><a th:href="@{/products/{id}/bucket(id=${product.id})}">Add to bucket</a></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+</div>
+</body>
+</html>
+
