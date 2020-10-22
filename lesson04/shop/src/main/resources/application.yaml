@@ -1,0 +1,43 @@
+server:
+  port: 8080
+#  servlet:
+#    context-path: /app
+
+spring:
+  mvc:
+    static-path-pattern: /statico/**
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      temp:
+        use_jdbc_metadata_defaults: false
+      id:
+        new_generator_mappings: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+  flyway:
+    baseline-on-migrate: true
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.ws: DEBUG
+
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: password
+#  flyway:
+#    baseline-on-migrate: true
+#logging:
+#  level:
+#    org.springframework.web: DEBUG
+#    org.springframework.ws: DEBUG
+
